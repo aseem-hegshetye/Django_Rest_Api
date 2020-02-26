@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+</head>
+<body>
+<h1>Welcome {{ doctor.first_name }} {{ doctor.last_name }}</h1>
+<h3>{{ doctor.specialty }}</h3>
+{{ doctor }}
+
+<a href="{% url 'patient_check_in' %}">Check In </a>
+
+{#<table>#}
+{#    <tr>#}
+{#        <th>Firstname</th>#}
+{#        <th>Lastname</th>#}
+{#        <th>appt_date</th>#}
+{#    </tr>#}
+{##}
+{#    {% for patient in patients %}#}
+{#        <tr>#}
+{#            <td>{{ patient.first_name }}</td>#}
+{#            <td>{{ patient.last_name }}</td>#}
+{#            <td>{{ patient.date_of_last_appointment }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+
+</body>
+</html>
