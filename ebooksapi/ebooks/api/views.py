@@ -10,7 +10,7 @@ from . import pagination
 
 
 class EbookListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Ebook.objects.all()
+    queryset = Ebook.objects.all().order_by("-id")  # negative id = order by id desc
     serializer_class = EbookSerializer
     permission_classes = [custom_permission.IsAdminOrReadOnly]
     pagination_class = pagination.SmallSetPagination
