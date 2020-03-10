@@ -8,7 +8,7 @@ class Profile(models.Model):
     Instead of extending abstractuser class, we are creating new model
     and mapping it onetoone to User model
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     bio = models.CharField(max_length=240, blank=True)
     city = models.CharField(max_length=30, blank=True)
     avatar = models.ImageField(null=True, blank=True)
@@ -21,7 +21,7 @@ class ProfileStatus(models.Model):
     """
     one profile can have multiple status
     """
-    user_profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     status_content = models.CharField(max_length=240)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
