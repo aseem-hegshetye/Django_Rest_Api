@@ -8,12 +8,7 @@ from profiles.models import Profile
 def create_profile(sender, instance, created, **kwargs):
     """
     As soon as new User is created & saved, we create a new Profile instance
-    :param sender:
-    :param instance:
-    :param created:
-    :param kwargs:
-    :return:
+
     """
-    print(f'created={created}')
     if created:
         Profile.objects.create(user=instance)
